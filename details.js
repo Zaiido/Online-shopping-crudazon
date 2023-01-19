@@ -13,19 +13,29 @@ window.onload = async () => {
         let response = await fetch(url + "/" + id, options);
         const { _id, name, description, brand, price, imageUrl } = await response.json()
         let containerNode = document.querySelector("body>.container");
-        containerNode.innerHTML = `<div class="d-flex mt-5">
-        <div class="mr-5">
-            <img src="${imageUrl}"
-                alt="Product">
-        </div>
-        <div>
-            <h1>Product: ${name}</h1>
-            <h2>Brand: ${brand}</h2>
-            <p>${description}</p>
-            <p>Price: €${price}</p>
-            <p>id: ${_id}</p>
+        containerNode.innerHTML = `<div class="mt-5">
+            
+            
+                <h1>${name}</h1>
+                <h4>Brand: ${brand}</h4>
+                <p>${description}</p>
+                <p>Price: €${price}</p>
+                <p>id: ${_id}</p>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Product Image</button>
+        
+        </div>`
+
+        document.querySelector("body").innerHTML += `<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="${imageUrl}" alt="Product Image">
+                </div>
+            </div>
         </div>
     </div>`
+
+
     } catch (error) {
         console.log(error)
     }

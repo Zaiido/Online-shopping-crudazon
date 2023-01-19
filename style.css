@@ -35,3 +35,8 @@
     max-width: 80%;
     margin-inline: auto;
 }
+
+.modal-content {
+    background-color: transparent;
+    border: none;
+}
