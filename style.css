@@ -1,0 +1,37 @@
+.navbar-dark .navbar-brand {
+    color: #F33F3F;
+    font-size: 22px;
+}
+
+.jumbotron {
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.35647762522977944) 0%, rgba(0, 0, 0, 1) 100%), url("https://images.unsplash.com/photo-1556740714-a8395b3bf30f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-size: cover;
+    background-position: 80%;
+    min-height: 80vh;
+}
+
+.jumbotron .container {
+    min-height: 60vh;
+}
+
+.jumbotron h1 {
+    color: white;
+    font-size: 70px;
+}
+
+.jumbotron h3 {
+    color: #F33F3F;
+}
+
+.products-container {
+    margin-top: 150px;
+}
+
+.products-container h2 {
+    margin-block: 7rem;
+}
+
+.form-container {
+    max-width: 80%;
+    margin-inline: auto;
+}
