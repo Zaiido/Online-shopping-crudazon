@@ -19,11 +19,11 @@ window.onload = async () => {
                 alt="Product">
         </div>
         <div>
-            <h1>${name}</h1>
-            <h2>${brand}</h2>
+            <h1>Product: ${name}</h1>
+            <h2>Brand: ${brand}</h2>
             <p>${description}</p>
-            <p>Price €${price}</p>
-            <p>${_id}</p>
+            <p>Price: €${price}</p>
+            <p>id: ${_id}</p>
         </div>
     </div>`
     } catch (error) {

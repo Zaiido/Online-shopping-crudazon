@@ -27,6 +27,7 @@ const addNewProduct = async (addProductEvent) => {
 
         let response = await fetch(url, options)
         if (response.ok) {
+            handleSuccess("Product added!")
             await displayProductsList()
         }
 
@@ -80,6 +81,7 @@ const deleteProduct = async (idToDelete) => {
         })
         if (response.ok) {
             await displayProductsList()
+            handleSuccess("Product deleted.")
         }
 
         else {
@@ -114,18 +116,19 @@ const editProduct = async (editEvent) => {
         let response = await fetch(url + "/" + id, options);
         let productsList = document.querySelector("table");
         productsList.style.visibility = "visible";
-        await displayProductsList()
+        if (response.ok) {
+            await displayProductsList()
+            handleSuccess("Product information updated.")
+        }
+        else {
+            throw response.status + " " + response.statusText
+        }
 
     } catch (error) {
         handleError(error)
     }
 }
 
-const handleError = (error) => {
-    let alert = document.querySelector(".alert-danger")
-    alert.querySelector("span").innerText = error
-    alert.style.display = "block"
-}
 
 window.onload = async () => {
     try {
@@ -171,3 +174,15 @@ window.onload = async () => {
 }
 
 
+
+const handleError = (error) => {
+    let alert = document.querySelector(".alert-danger")
+    alert.querySelector("span").innerText = error
+    alert.classList.replace("d-none", "d-block")
+}
+
+const handleSuccess = (text) => {
+    let alert = document.querySelector(".alert-success")
+    alert.querySelector("span").innerText = text
+    alert.classList.replace("d-none", "d-block")
+}
