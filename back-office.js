@@ -177,12 +177,22 @@ window.onload = async () => {
 
 const handleError = (error) => {
     let alert = document.querySelector(".alert-danger")
+    let existingAlert = document.querySelector(".alert-success")
+
+    if (existingAlert !== null) {
+        existingAlert.classList.replace("d-block", "d-none")
+    }
     alert.querySelector("span").innerText = error
     alert.classList.replace("d-none", "d-block")
 }
 
 const handleSuccess = (text) => {
     let alert = document.querySelector(".alert-success")
+    let existingAlert = document.querySelector(".alert-danger")
+
+    if (existingAlert !== null) {
+        existingAlert.classList.replace("d-block", "d-none")
+    }
     alert.querySelector("span").innerText = text
     alert.classList.replace("d-none", "d-block")
 }
